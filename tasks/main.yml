@@ -21,11 +21,11 @@
 - name: Install brew packages
   become: false
   homebrew:
-    name: "{{ item.name }}"
+    name: "{{ item }}"
   with_items: "{{ brew_packages }}"
 
 - name: Install brew cask packages
   become: false
   homebrew_cask:
-    name: "{{ item.name }}"
+    name: "{{ item }}"
   with_items: "{{ cask_packages }}"
