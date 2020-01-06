@@ -13,6 +13,7 @@
     mode: +x
 
 - name: install linuxbrew
+  become: false
   shell: ./install.sh
   args:
     creates: /home/linuxbrew
