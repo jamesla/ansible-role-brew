@@ -8,7 +8,7 @@
 
 - name: download linuxbrew
   get_url:
-    src: https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
+    url: https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
     dest: /tmp/install.sh
     mode: +x
 
