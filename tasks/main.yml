@@ -13,7 +13,6 @@
     mode: +x
 
 - name: install linuxbrew
-  become_user: vagrant
   become: false
   shell: ./install.sh
   args:
