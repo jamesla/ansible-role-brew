@@ -23,9 +23,3 @@
   homebrew:
     name: "{{ item }}"
   with_items: "{{ brew_packages }}"
-
-- name: Install brew cask packages
-  become: false
-  homebrew_cask:
-    name: "{{ item }}"
-  with_items: "{{ cask_packages }}"
