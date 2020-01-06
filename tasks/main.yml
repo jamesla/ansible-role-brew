@@ -1,0 +1,31 @@
+---
+
+- name: install brew
+  apt:
+    name:
+      - linuxbrew-wrapper
+    update_cache: true
+
+- name: download linuxbrew
+  get_url:
+    src: https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
+    dest: /tmp/install.sh
+    mode: +x
+
+- name: install linuxbrew
+  shell: ./install.sh
+  args:
+    creates: /home/linuxbrew
+    chdir: /tmp
+
+- name: Install brew packages
+  become: false
+  homebrew:
+    name: "{{ item.name }}"
+  with_items: "{{ brew_packages }}"
+
+- name: Install brew cask packages
+  become: false
+  homebrew_cask:
+    name: "{{ item.name }}"
+  with_items: "{{ cask_packages }}"

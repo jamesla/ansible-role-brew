@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: jamesla
+  description: Install brew and packages
+  company: jamesla
+  license: license (BSD, MIT)
+  min_ansible_version: 2.0
+  platforms:
+  - name: Debian
+    versions:
+    - stretch
+    - jessie
+  - name: Ubuntu
+    versions:
+    - zesty
+    - trusty
+    - xenial
+  galaxy_tags:
+    - brew
+    - homebrew
